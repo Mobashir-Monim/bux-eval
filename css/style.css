@@ -1,0 +1,103 @@
+body {
+    background-color: #171717;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* body::after {
+    content: "";
+    background: url("../img/eve-logo-17.svg");
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: initial;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+} */
+
+.btn-custom {
+    background-color: #fff;
+    color: #171717;
+    border-radius: 25px;
+    border: 1px solid white;
+}
+
+.btn-custom:hover {
+    background-color: #171717;
+    color: #fff;
+}
+
+.btn-custom-2 {
+    background-color: #275cab;
+    color: #fff;
+    border-radius: 25px;
+    border: 1px solid white;
+}
+
+.btn-custom-2:hover {
+    background-color: #171717;
+    color: #fff;
+}
+
+input {
+    border-radius: 25px !important;
+    padding: 0px !important;
+}
+
+::-webkit-file-upload-button {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-weight: 500;
+    border: 0px;
+    border-right: 1px solid #171717 !important;
+    background-color: #007bff;
+    color: #fff;
+    height: inherit;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+::-webkit-file-upload-button:hover {
+    background-color: #171717;
+    color: #fff;
+}
+
+table {
+    font-size: 80%;
+}
+
+.pane {
+    display: inline-block;
+    overflow-y: scroll;
+    max-height:350px;
+    font-size: 80%;
+}
+
+.headers .pane {
+    display: inline-block;
+    overflow-y: scroll;
+    max-height:200px;
+    font-size: 80%;
+    width: 100%;
+}
+
+.table-responsive::-webkit-scrollbar, table::-webkit-scrollbar {
+    display: none;
+}
+
+.table-responsive, table {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.btn {
+    border-radius: 25px;
+}
+
+table, tbody, tr, th, td {
+    color: white !important;
+}

@@ -1,0 +1,33 @@
+body {
+    font-family: 'Nunito', sans-serif !important;
+}
+
+.legend-area {
+    background-color: #eee;
+}
+
+.kl-desc {
+    font-size: 0.8em;
+}
+
+.pb {
+    page-break-before: always;
+}
+
+p {
+    font-size: 0.8em;
+    vertical-align: text-bottom !important;
+    margin-bottom: 0px;
+}
+
+.cat-cont {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    width: 20%;
+}
+
+.cat-num {
+    display: inline-block;
+    margin-left: 20px;
+}
