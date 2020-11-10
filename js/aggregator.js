@@ -67,3 +67,7 @@ const qStatAgSec = (course, section) => {
         }
     }
 }
+
+const qAgComment = q => {
+    
+}

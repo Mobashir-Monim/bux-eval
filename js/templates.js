@@ -7,6 +7,11 @@ const courseTemplate = {
         ae: 0,
         lx: 0,
         sp: 0,
+        le: 0,
+        sp: 0,
+        ta: 0,
+        cr: 0,
+        lr: 0,
     },
     students: 0,
     respondents: 0,
@@ -72,6 +77,11 @@ const courseTempEvalTemplate = {
     ae: 0,
     lx: 0,
     sp: 0,
+    le: 0,
+    sp: 0,
+    ta: 0,
+    cr: 0,
+    lr: 0,
     r: 0,
 }
 

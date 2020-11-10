@@ -886,31 +886,31 @@ const questionMatrix = {
     },
     'Please describe the good things about how this course was taught.': {
         type: 'text',
-        calc: 'non-eval',
+        calc: 'non-eval comment',
     },
     'Please describe the teaching methods used in this course and course administration that you think need improvement. ': {
         type: 'text',
-        calc: 'non-eval',
+        calc: 'non-eval comment',
     },
     'Please give your opinion on how to use technology better. Please suggest the best combination of digital platforms to be used for smooth communication between students and teachers, administration of the course, and online lectures.': {
         type: 'text',
-        calc: 'non-eval',
+        calc: 'non-eval comment',
     },
     'Were any of the standard guidelines for online courses broken by this course?  For example, one guideline is that attendance should not be taken in live classes. ': {
         type: 'text',
-        calc: 'non-eval',
+        calc: 'non-eval comment',
     },
     'Please provide comments on your section teacher. ': {
         type: 'text',
-        calc: 'non-eval',
+        calc: 'non-eval comment',
     },
     'How would you improve this course?': {
         type: 'text',
-        calc: 'non-eval',
+        calc: 'non-eval comment',
     },
     'If there was a lab component, how would you improve the lab part of the course?': {
         type: 'text',
-        calc: 'non-eval',
+        calc: 'non-eval comment',
     },
 };
 
