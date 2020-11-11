@@ -1,3 +1,4 @@
+let content = `
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -385,3 +386,36 @@
         </div>
     </body>
 </html>
+`;
+
+const generateQStatSection = (html = '', cont) => {
+    html = `${ html }<div class="row mb-3 border-bottom mt-3"><div class="col-md-12"><h6 class="mb-0">Stats</h6></div></div><div class="row mb-3">`;
+
+    for (q in cont.qStat) {
+        html = `${ html }<div class="col-md-6 mb-4"><p class="mb-0 border-bottom"><b>${ q }</b></p>`;
+
+        for (opt in cont.qStat[q]) {
+            html = `${ html }<p class="w-100"><b>${ (100 * cont.qStat[q][opt] / cont.respondents).toFixed(1) }%</b> respondents said '<i>${ opt }</i>'</p>`;
+        }
+
+        html = `${ html }</div>`;
+    }
+
+    return `${ html }</div>`;
+}
+
+const generateQCommentSection = (html = '', cont) => {
+    html = `${ html }<div class="row mb-3 border-bottom mt-3"><div class="col-md-12"><h6 class="mb-0">Stats</h6></div></div><div class="row mb-3">`;
+
+    for (q in cont.qStat) {
+        html = `${ html }<div class="col-md-6 mb-4"><p class="mb-0 border-bottom"><b>${ q }</b></p>`;
+
+        for (opt in cont.qStat[q]) {
+            html = `${ html }<p class="w-100"><b>${ (100 * cont.qStat[q][opt] / cont.respondents).toFixed(1) }%</b> respondents said '<i>${ opt }</i>'</p>`;
+        }
+
+        html = `${ html }</div>`;
+    }
+
+    return `${ html }</div>`;
+}

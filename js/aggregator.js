@@ -15,7 +15,7 @@ const aggregateCourseSections = () => {
         averageValues(course, temp);
     })
 
-    generateReport();
+    // generateReport();
 }
 
 const averageValues = (cont, temp = null) => {
