@@ -870,7 +870,7 @@ const questionMatrix = {
     },
     'How would you rate this course on a scale on 1 to 10?': {
         type: 'radio',
-        calc: 'course-section',
+        calc: 'course-section qAg',
         options: {
             '1': { cr: 1 },
             '2': { cr: 2 },

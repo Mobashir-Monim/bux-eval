@@ -17,7 +17,8 @@ const analyzeCourseSection = () => {
         addToCourse(temp, templ, cs, cl);
     })
 
-    aggregateCourseSections();
+    compileDeptCourses();
+    aggregateDeptCourseScores();
 }
 
 const evalCSRow = (q, temp, row, cs) => {
@@ -133,5 +134,25 @@ const factorWeight = (temp, templ) => {
                 fac.cats[cat] *= temp.w;
             })
         })
+    }
+}
+
+const compileDeptCourses = () => {
+    for (c in courseList) {
+        if (fractions[c].length > 1) {
+            fractions[c].forEach(f => {
+                let tempC = createCourse(c), secs = f.sections.split(',');
+                let dept = gd(f.frac);
+                secs.forEach(sec => {
+                    if (courseList[c].sections.hasOwnProperty(sec)) {
+                        tempC.sections[sec] = deepCopy(courseList[c].sections[sec]); }});
+                
+                tempC.labs = deepCopy(courseList[c].labs);
+                dept.courses[c] = tempC;
+            });
+        } else {
+            let dept = gd(fractions[c][0].frac);
+            dept.courses[c] = deepCopy(courseList[c]);
+        }
     }
 }

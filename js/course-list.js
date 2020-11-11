@@ -1,4 +1,5 @@
 let courseList = {};
+let deptList = {};
 
 const getCourse = (name) => {
     if (!courseList.hasOwnProperty(name)) {
@@ -26,6 +27,14 @@ const getCourseLab = (name, section) => {
     }
 
     return course.labs[section];
+}
+
+const getDepartment = name => {
+    if (!deptList.hasOwnProperty(name)) {
+        deptList[name] = createDepartment(name);
+    }
+
+    return deptList[name];
 }
 
 const createCourse = (name) => {
@@ -62,6 +71,12 @@ const createLabFacultyTemp = () => {
     return deepCopy(labFacultyTemplate);
 }
 
+const createDepartment = name => {
+    dept = deepCopy(deptTemplate);
+    dept.name = name;
+    return dept;
+}
+
 const gc = (n) => {
     return getCourse(n);
 }
@@ -72,6 +87,10 @@ const gcs = (n, s) => {
 
 const gcl = (n, s) => {
     return getCourseLab(n, s);
+}
+
+const gd = (n) => {
+    return getDepartment(n);
 }
 
 const cst = () => {
@@ -88,4 +107,8 @@ const clt = () => {
 
 const clft = () => {
     return createLabFacultyTemp();
+}
+
+const cdt = () => {
+    return createDepartmentTemp();
 }

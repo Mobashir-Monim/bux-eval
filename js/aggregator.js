@@ -1,21 +1,42 @@
-const aggregateCourseSections = () => {
-    Object.keys(courseList).forEach(c => {
-        let temp = cct(), course = courseList[c];
+const aggregateDeptCourseScores = () => {
+    for (d in deptList) { aggregateContParts(deptList[d].courses, 'sections', true); }
+    aggregateContParts(deptList, 'courses');
 
-        Object.keys(course.sections).forEach(section => {
-            Object.keys(course.cats).forEach(cat => { temp[cat] += course.sections[section].cats[cat]; })
-            temp.r += course.sections[section].respondents;
-            averageValues(course.sections[section]);
-            qStatAgSec(course, section);
-            course.sections[section].students = usisReg.filter(reg => { return reg["Course_ID"] == course.name && reg["section"] == course.sections[section].section }).length;
-        })
+    for (d in deptList) {
+        averageValues(deptList[d]);
 
-        course.respondents = temp.r;
-        course.students = usisReg.filter(reg => { return reg["Course_ID"] == course.name }).length;
-        averageValues(course, temp);
-    })
+        for (c in deptList[d].courses) {
+            averageValues(deptList[d].courses[c]);
+            
+            for (s in deptList[d].courses[c].sections) {
+                averageValues(deptList[d].courses[c].sections[s]);
+            }
+        }
+    }
+}
 
-    // generateReport();
+const aggregateContParts = (cL, contName, flag = false) => {
+    for (c in cL) {
+        let temp = cct(), segment = cL[c];
+
+        for (part in segment[contName]) {
+            for (cat in segment.cats) { temp[cat] += segment[contName][part].cats[cat]; }
+            segment.respondents += segment[contName][part].respondents;
+                        
+            if (flag) {
+                qStatAgSec(segment, part);
+                segment[contName][part].students = usisReg.filter(reg => { return reg["Course_ID"] == segment.name && reg["section"] == segment[contName][part].section }).length;
+            } else {
+                segment.students += segment[contName][part].students;
+            }
+        }
+
+        if (flag) {
+            segment.students = usisReg.filter(reg => { return reg["Course_ID"] == segment.name }).length;
+        }
+
+        for(cat in temp) { segment.cats[cat] = temp[cat] };
+    }
 }
 
 const averageValues = (cont, temp = null) => {
@@ -65,6 +86,12 @@ const qStatAgSec = (course, section) => {
         for (op in course.sections[section].qStat[q]) {
             qStatAg(course, q, op, course.sections[section].qStat[q][op]);
         }
+    }
+}
+
+const segregateSections = () => {
+    for (c in courseList) {
+
     }
 }
 
